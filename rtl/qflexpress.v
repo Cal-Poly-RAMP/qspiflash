@@ -63,6 +63,7 @@
 `default_nettype	none
 // }}}
 // 290 raw, 372 w/ pipe, 410 cfg, 499 cfg w/pipe
+/* verilator lint_off UNUSEDPARAM */
 module	qflexpress #(
 		// {{{
 		// LGFLASHSZ
@@ -177,7 +178,7 @@ module	qflexpress #(
 		localparam [7:0] QIO_READ_CMD = OPT_ADDR32 ? 8'hec : 8'heb,
 		//
 		localparam	AW=LGFLASHSZ-2,
-		localparam	DW=32,
+		localparam	DW=32
 `ifdef	FORMAL
 		, localparam	F_LGDEPTH=$clog2(3+RDDELAY+(OPT_ADDR32 ? 2:0))
 `endif
@@ -2432,3 +2433,4 @@ module	qflexpress #(
 `endif
 // }}}
 endmodule
+/* verilator lint_on UNUSEDPARAM */
